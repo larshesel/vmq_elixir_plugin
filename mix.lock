@@ -1,0 +1,2 @@
+%{"elixir": {:git, "git://github.com/elixir-lang/elixir", "e02d7bf913f3e5ea8c9e49648e69324ec5c65919", [tag: "v1.0.4"]},
+  "vmq_elixir": {:git, "git://localhost/vmq_elixir", "4b113c1cafae935ab9e254a5fb38b2da95680437", []}}
