@@ -20,8 +20,8 @@ defmodule VmqElixirPlugin.Mixfile do
   end
 
   defp vmq_plugin_hooks do
-    {:vmq_plugin_hooks, [{Elixir.VmqElixirPlugin,:auth_on_subscribe,3},
-                         {Elixir.VmqElixirPlugin,:auth_on_register,5}]}
+    {:vmq_plugin_hooks, [{Elixir.VmqElixirPlugin,:auth_on_subscribe,3,[]},
+                         {Elixir.VmqElixirPlugin,:auth_on_register,5,[]}]}
   end
 
   # Dependencies can be Hex packages:
@@ -34,6 +34,6 @@ defmodule VmqElixirPlugin.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    [{:vmq_elixir, git: "git://localhost/vmq_elixir"}]
+    [{:vmq_elixir, git: "https://github.com/larshesel/vmq_elixir.git"}]
   end
 end
