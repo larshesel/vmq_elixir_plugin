@@ -17,7 +17,7 @@ $ rebar compile
 $ vmq-admin plugin enable --name vmq_elixir --path `pwd`
 ```
 
-Check the `vmq_plugin` plugin is loaded. `vmq-admin plugin show`
+Check the `vmq_elixir` plugin is loaded. `vmq-admin plugin show`
 should return something like:
 
 ```shell
