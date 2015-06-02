@@ -21,7 +21,8 @@ defmodule VmqElixirPlugin.Mixfile do
 
   defp vmq_plugin_hooks do
     {:vmq_plugin_hooks, [{Elixir.VmqElixirPlugin,:auth_on_subscribe,3,[]},
-                         {Elixir.VmqElixirPlugin,:auth_on_register,5,[]}]}
+                         {Elixir.VmqElixirPlugin,:auth_on_register,5,[]},
+                         {Elixir.VmqElixirPlugin,:auth_on_publish,6,[]}]}
   end
 
   # Dependencies can be Hex packages:
@@ -34,6 +35,9 @@ defmodule VmqElixirPlugin.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    []
+    # Use vmq_elixir as a dev dependency, otherwise we can's start the
+    # app with `iex -S mix`. It's not needed for creating actual
+    # plugins, as vmq_elixir would already be loaded..
+    [{:vmq_elixir, git: "https://github.com/larshesel/vmq_elixir.git", only: :dev}]
   end
 end
