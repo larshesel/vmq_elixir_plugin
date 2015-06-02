@@ -34,6 +34,6 @@ defmodule VmqElixirPlugin.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    [{:vmq_elixir, git: "https://github.com/larshesel/vmq_elixir.git"}]
+    []
   end
 end
