@@ -3,18 +3,22 @@
 > An example elixir plugin for VerneMQ
 
 This is a simple example elixir plugin for VerneMQ. It depends on the
-[vmq_elixir](https://github.com/larshesel/vmq_elixir) plugin to be
-loaded. It also assumes [VerneMQ](https://verne.mq/) to be properly
-installed and also that `vmq-admin` is in your path.
+[vmq_elixir](https://github.com/larshesel/vmq_elixir) plugin which load Elixir
+into the [VerneMQ](https://verne.mq/) Erlang VM. In the following we'll show how
+to setup both `vmq_elixir` and the `vmq_elixir_plugin` sample Elixir plugin.
+
+The Elixir version used is 1.1.1 and we assume Erlang 17.x and
+[rebar3](http://www.rebar3.org/) are available and [VerneMQ](https://verne.mq/)
+to be properly installed and that `vmq-admin` is in your path.
 
 Here's how to do it. First setting up vmq_elixir
 
 ```shell
 $ git clone https://github.com/larshesel/vmq_elixir
 $ cd vmq_elixir
-$ rebar get-deps
-$ rebar compile
-$ vmq-admin plugin enable --name vmq_elixir --path `pwd`
+$ rebar3 compile
+$ vmq-admin plugin enable --name vmq_elixir --path `pwd`/_build/default/lib/vmq_elixir
+
 ```
 
 Check the `vmq_elixir` plugin is loaded. `vmq-admin plugin show`
@@ -39,6 +43,7 @@ Leave the `vmq_elixir` directory and do the same for
 ```shell
 $ git clone https://github.com/larshesel/vmq_elixir_plugin
 $ cd vmq_elixir_plugin
+$ mix deps.get
 $ mix compile
 $ vmq-admin plugin enable --name  vmq_elixir_plugin --path `pwd`/_build/dev/lib/vmq_elixir_plugin
 ```
