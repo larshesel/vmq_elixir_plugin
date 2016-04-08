@@ -14,7 +14,7 @@ defmodule VmqElixirPlugin.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger, :vmq_elixir],
+    [applications: [:vmq_elixir],
      mod: {VmqElixirPlugin, []},
      env: [vmq_plugin_hooks]]
   end
@@ -35,9 +35,6 @@ defmodule VmqElixirPlugin.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    # Use vmq_elixir as a dev dependency, otherwise we can's start the
-    # app with `iex -S mix`. It's not needed for creating actual
-    # plugins, as vmq_elixir would already be loaded..
-    [{:vmq_elixir, git: "https://github.com/larshesel/vmq_elixir.git", only: :dev}]
+    []
   end
 end

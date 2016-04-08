@@ -39,7 +39,7 @@ defmodule VmqElixirPlugin do
   Hook callback function handling authentication when registering.
   """
   def auth_on_register({_ipaddr, _port} = peer, {_mountpoint, _clientid} = subscriberid, username, password, cleansession) do
-    Logger.info "#{inspect {:auth_on_register, peer, subscriberid, username, password, cleansession}}"
+    :error_logger.msg "#{inspect {:auth_on_register, peer, subscriberid, username, password, cleansession}}"
     # do whatever you like with the params, all that matters
     # is the return value of this function
     #
@@ -61,7 +61,7 @@ defmodule VmqElixirPlugin do
   Hook callback function handling publishing authentication.
   """
   def auth_on_publish(username, {_mountpoint, _clientid} = subscriber_id, qos, topic, payload, isretain) do
-    Logger.info "#{inspect {:auth_on_publish, username, subscriber_id, qos, topic, payload, isretain}}"
+    :error_logger.info_msg "#{inspect {:auth_on_publish, username, subscriber_id, qos, topic, payload, isretain}}"
     # do whatever you like with the params, all that matters
     # is the return value of this function
     #
@@ -75,7 +75,7 @@ defmodule VmqElixirPlugin do
     #     - {retain, newretainflag::boolean}
     # 5. return {error, whatever} -> auth chain is stopped, and message is silently dropped (unless it is a Last Will message)
     #
-    # we return 'ok'
+    # we return :ok
     :ok
   end
 
@@ -83,7 +83,7 @@ defmodule VmqElixirPlugin do
   Hook callback function handling subscribtion authentication.
   """
   def auth_on_subscribe(username, clientid, [{_topic, _qos}|_] = topics) do
-    Logger.info "#{inspect {:auth_on_subscribe, username, clientid, topics}}"
+    :error_logger.info_msg "#{inspect {:auth_on_subscribe, username, clientid, topics}}"
     # do whatever you like with the params, all that matters
     # is the return value of this function
     #
