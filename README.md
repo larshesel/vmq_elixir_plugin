@@ -36,7 +36,7 @@ Let's check that the `elixir` plugin whas correctly loaded by invoking
 with an entry for the `elixir` application:
 
 ```shell
-$ ./vmq-admin plugin show
+$ vmq-admin plugin show
 +-----------------+-----------+-----------------+--------------------------------------------+
 |     Plugin      |   Type    |     Hook(s)     |                   M:F/A                    |
 +-----------------+-----------+-----------------+--------------------------------------------+
@@ -66,7 +66,7 @@ If the plugin was loaded correctly `vmq-admin plugin show` should show
 the plugin like this:
 
 ```shell
-$ ./vmq-admin plugin show
+$ vmq-admin plugin show
 +-----------------+-----------+-----------------+--------------------------------------------+
 |     Plugin      |   Type    |     Hook(s)     |                   M:F/A                    |
 +-----------------+-----------+-----------------+--------------------------------------------+
