@@ -14,7 +14,7 @@ defmodule VmqElixirPlugin.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:vmq_elixir],
+    [applications: [:elixir],
      mod: {VmqElixirPlugin, []},
      env: [vmq_plugin_hooks]]
   end
