@@ -1,8 +1,4 @@
 defmodule VmqElixirPlugin do
-  use Application
-  require Logger
-
-
   @moduledoc """
   This file demonstrates the hooks you typically want to use
   if your plugin deals with Authentication or Authorization.
@@ -17,23 +13,6 @@ defmodule VmqElixirPlugin do
   IMPORTANT:
    these hook functions run in the session context
   """
-
-  @doc """
-  Application start function.
-  """
-  def start(_type, _args) do
-    import Supervisor.Spec, warn: false
-
-    children = [
-      # Define workers and child supervisors to be supervised
-      # worker(VmqElixirPlugin.Worker, [arg1, arg2, arg3])
-    ]
-
-    # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
-    # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: VmqElixirPlugin.Supervisor]
-    Supervisor.start_link(children, opts)
-  end
 
   @doc """
   Hook callback function handling authentication when registering.
