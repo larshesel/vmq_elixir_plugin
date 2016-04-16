@@ -4,7 +4,7 @@ defmodule VmqElixirPlugin.Mixfile do
   def project do
     [app: :vmq_elixir_plugin,
      version: "0.0.2",
-     elixir: "== 1.1.1",
+     elixir: "~> 1.2.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps]
@@ -15,7 +15,6 @@ defmodule VmqElixirPlugin.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [applications: [:elixir],
-     mod: {VmqElixirPlugin, []},
      env: [vmq_plugin_hooks]]
   end
 

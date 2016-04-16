@@ -58,7 +58,7 @@ $ git clone https://github.com/larshesel/vmq_elixir_plugin
 $ cd vmq_elixir_plugin
 $ mix deps.get
 $ mix compile
-$ vmq-admin plugin enable --name  vmq_elixir_plugin --path `pwd`/_build/dev/
+$ vmq-admin plugin enable --name vmq_elixir_plugin --path `pwd`/_build/dev/
 Done
 ```
 
