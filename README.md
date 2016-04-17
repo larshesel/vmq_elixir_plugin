@@ -3,11 +3,15 @@
 > An example elixir plugin for VerneMQ
 
 This is a simple example elixir plugin for VerneMQ. It is assumed
-[VerneMQ](https://verne.mq/) is properly installed and that
+[VerneMQ](https://vernemq.com/) is properly installed and that
 `vmq-admin` is in your path.
 
-Further, it is assumed a version of Elixir is correctly installed and
-available.
+Note: For VerneMQ to be compatible with your Elixir installation, here's the
+relationship between the required Erlang version used to build and run VerneMQ
+and Elixir version:
+
+- Elixir 1.1.x: VerneMQ *must* run Erlang 17+
+- Elixir 1.2+: VerneMQ *must* run Erlang 18+
 
 ## Enabling Elixir in VerneMQ
 
